@@ -7,13 +7,13 @@ operações básicas utilizando listas lincadas, pilhas e conversão entre as fo
 e pós-fixa.
 
 
-## O que ela faz?
+### O que ela faz?
 Aceita algumas expressões simples entradas pelo usuário e apresenta o resultado no terminal:
 
 ![gif da calculadora](/C/resources/calculator.gif)
 
 
-## Dependendências
+### Dependendências
 * git
 * gcc
 * g++
@@ -21,9 +21,9 @@ Aceita algumas expressões simples entradas pelo usuário e apresenta o resultad
 * make
 
 
-## Como usar
+### Como usar
 
-### Baixe o repositório
+##### Baixe o repositório
 Abra o terminal e digite:
 
 ```
@@ -32,7 +32,7 @@ $ git clone https://github.com/y-azvd/calculator.git
 
 Ou clique no botão verde no diretório raíz desse repositório.
 
-### Depois de ter baixado
+##### Depois de ter baixado
 ```
 $ cd calculator/C
 $ mkdir build
@@ -45,15 +45,14 @@ $ make
 o framework [Catch2](https://github.com/catchorg/Catch2). Mas é só na primeira vez.
 
 
-### Executar
+##### Executar
 ```
 $ ./calculator
 ```
 
-## Fazendo
-Melhorando o algoritmo de avaliação.
+### Fazendo
+Melhorando o algoritmo de avaliação para corrigir bugs.
 
 
-## A fazer
-Ainda tem muita coisa pra fazer. Nem sei listar. Tenho que organizar um
-quadro Scrum/Kanbam.
+### Bugs
+`-1+1` e expressões similares ainda não funcionam.

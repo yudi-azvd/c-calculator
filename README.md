@@ -7,7 +7,8 @@ as formas infixa e pós-fixa.
 
 
 ## C
-A calculadora funciona para expressões simples que são "hardcoded" em `C/main/main.c`.
+A calculadora funciona para expressões simples que são entradas pelo usuário no terminal depois de excutar o comando
+`./C/buid/calculator`
 
 
 ## Em um futuro não tão distante
