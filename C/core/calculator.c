@@ -89,8 +89,8 @@ t_list* to_postfix(t_list* expression) {
         else if(is_operator(*element)) {
             char* last_operator = (char*) peek(stack);
 
-            while(!is_empty(stack)
-                && get_priority(*last_operator) >= get_priority(*element)) {
+            while(!is_empty(stack) && get_priority(*last_operator) 
+                >= get_priority(*element)) {
 
                 insert_tail(output, soft_pop(stack));
             }

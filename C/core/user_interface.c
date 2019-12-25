@@ -2,7 +2,7 @@
 #include "user_interface.h"
 
 void get_expression(char* expression) {
-    scanf("%[^\n]%*c", expression);
+  scanf("%[^\n]%*c", expression);
 }
 
 int is_quit(char* input) {

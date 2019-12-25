@@ -172,7 +172,7 @@ int is_empty(t_list* list);
 /**
  * @memberof   t_list
  *
- * @brief      Para fins de deparação, imprime a lista na tela.
+ * @brief      Para fins de depuração, imprime a lista na tela.
  * Só deve ser usada quando foi definida o tipo de dados da lista.
  *
  * @param      list  Ponteiro para lista.
