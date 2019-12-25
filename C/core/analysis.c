@@ -93,7 +93,7 @@ t_list* expression_to_list(char expression[]) {
         }
         else if(is_function(expression[i])) {
             /* pra pegar termos como
-            3.0*sin(1.5689)+4^atan2(3, 4)
+            3.0*log(1.5689)+4^atan2(3, 4)
                 ^^^^^^^^^^^   ^^^^^^^^^^^ */
         }
         else if(is_number(expression[i])) {
