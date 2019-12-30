@@ -48,10 +48,8 @@ TEST_CASE("evaluate 1", "[evaluate]") {
 
     list = expression_to_list(expression);
 
-    print(list);
-
     evaluate(list, &result);
-    REQUIRE(string(result) == "18.000000");
+    REQUIRE(string(result) == "-180.0000");
 
     clear(list); // liberar os nós e os data's
     free(list);
@@ -94,3 +92,6 @@ TEST_CASE("evaluate 3", "[evaluate]") {
 
     free(result);
 }
+
+// "ALGUMA COISA DEU ERRADO"
+//-3*8*(0-7)

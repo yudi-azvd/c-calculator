@@ -1,5 +1,10 @@
 #include "analysis.h"
 
+
+/**
+ * Talvez eu tenha que fazer outra função pra aceitar
+ * string 
+ */
 int is_number(char c) {
     return ('0' <= c && c <= '9');
 }
