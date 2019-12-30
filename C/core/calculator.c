@@ -31,7 +31,10 @@ void evaluate(t_list* expression, char** result) {
     for(curr_node=postfix->head; curr_node!=NULL; curr_node=curr_node->next) {
         element = (char*) curr_node->data;
 
-        if(is_number(element[0])) {
+        if(is_number(element[0])
+            || ( element[0] == '-' && is_number(element[1]))
+            ) {
+
             char* copied_element = calloc(strlen(element)+1, sizeof(char));
             strcpy(copied_element, element);
             push(stack, copied_element);
@@ -82,7 +85,7 @@ t_list* to_postfix(t_list* expression) {
     for(curr_node = expression->head; curr_node!= NULL; curr_node=curr_node->next) {
         element = (char*) curr_node->data;
 
-        if(is_number(*element)) {
+        if(is_number(*element)  ) {
             insert_tail(output, element);
         }
 

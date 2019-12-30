@@ -21,7 +21,7 @@ extern "C" {
 #endif
 
 
-TEST_CASE("evaluate", "[evaluate]") {
+TEST_CASE("evaluate 0", "[evaluate]") {
     char* data;
     char* result;
     t_list* list;
@@ -29,6 +29,26 @@ TEST_CASE("evaluate", "[evaluate]") {
     char expression[] = "3*(8+4)/2";
 
     list = expression_to_list(expression);
+
+    evaluate(list, &result);
+    REQUIRE(string(result) == "18.000000");
+
+    clear(list); // liberar os nós e os data's
+    free(list);
+
+    free(result);
+}
+
+TEST_CASE("evaluate 1", "[evaluate]") {
+    char* data;
+    char* result;
+    t_list* list;
+
+    char expression[] = "-30.0*(8+4)/2";
+
+    list = expression_to_list(expression);
+
+    print(list);
 
     evaluate(list, &result);
     REQUIRE(string(result) == "18.000000");
