@@ -38,3 +38,39 @@ TEST_CASE("evaluate", "[evaluate]") {
 
     free(result);
 }
+
+TEST_CASE("evaluate 2", "[evaluate]") {
+    char* data;
+    char* result;
+    t_list* list;
+
+    char expression[] = "2";
+
+    list = expression_to_list(expression);
+
+    evaluate(list, &result);
+    REQUIRE(string(result) == "2");
+
+    clear(list); // liberar os nós e os data's
+    free(list);
+
+    free(result);
+}
+
+TEST_CASE("evaluate 3", "[evaluate]") {
+    char* data;
+    char* result;
+    t_list* list;
+
+    char expression[] = "-2";
+
+    list = expression_to_list(expression);
+
+    evaluate(list, &result);
+    REQUIRE(string(result) == "-2");
+
+    clear(list); // liberar os nós e os data's
+    free(list);
+
+    free(result);
+}
