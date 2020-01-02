@@ -8,7 +8,9 @@ void ungetstr(const char *str, FILE *stream);
 
 void getstr(char *str, int size, FILE *stream);
 
+/*
 void getusrinput(char *str, int size);
+*/
 
 /* void get_usr_input(void (*function)(),
                     char *str,

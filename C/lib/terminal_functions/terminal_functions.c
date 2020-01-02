@@ -21,7 +21,9 @@ void getstr(char *str, int size, FILE *stream) {
     str[i] = '\0';
 }
 
-
+/*
 void getusrinput(char *str, int size) {
     scanf("%[^\n]%*c", str);
 }
+
+*/

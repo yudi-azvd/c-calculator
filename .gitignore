@@ -42,3 +42,10 @@
 **/*.cbp
 **/CMakeScripts
 **/compile_commands.json
+
+# Relacionado ao C
+./C/build/*
+
+# Relacionado ao VScode
+calculator-c.code-workspace
+

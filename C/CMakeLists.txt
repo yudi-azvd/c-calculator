@@ -50,6 +50,10 @@ file(GLOB TEST_SOURCES_ANALYSIS
 	"tests/analysis/*.cpp"
 )
 
+file(GLOB TEST_SOURCES_USER_INTERFACE
+	"tests/user_interface/*.cpp"
+)
+
 file(GLOB TEST_SOURCES_CALCULATOR
 	"tests/calculator/*.cpp"
 )
@@ -70,6 +74,10 @@ set(CMAKE_C_FLAGS "-Wall -ansi -std=c99")
 
 add_executable(calculator ${CORE} main/main.c)
 target_link_libraries(calculator ${LIBS})
+
+add_executable(
+	test_main ${LIBS} main/test_main.c
+)
 
 
 add_executable(
@@ -99,11 +107,19 @@ add_executable(
 )
 
 add_executable(
+	test_user_interface
+	${CORE}
+ 	${TEST_SOURCES_USER_INTERFACE}
+	${LIBS}
+)
+
+add_executable(
 	test_calculator
 	${CORE}
  	${TEST_SOURCES_CALCULATOR}
 	${LIBS}
 )
+
 
 # Compilar os testes aletórios
 # foreach(src_file ${TEST_SOURCES_RANDOM_TESTS})

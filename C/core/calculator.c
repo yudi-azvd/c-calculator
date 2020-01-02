@@ -26,18 +26,19 @@ void evaluate(t_list* expression, char** result) {
     t_list* postfix = to_postfix(expression);
     t_stack* stack = create_stack("char*");
 
-    // print(postfix);
-
     for(curr_node=postfix->head; curr_node!=NULL; curr_node=curr_node->next) {
         element = (char*) curr_node->data;
 
-        if(is_number(element[0])) {
+        if (is_number(element[0])
+            || ( element[0] == '-' && is_number(element[1]))
+            ) {
+
             char* copied_element = calloc(strlen(element)+1, sizeof(char));
             strcpy(copied_element, element);
             push(stack, copied_element);
             // push(stack, element);
         }
-        else if(is_operator(element[0])) {
+        else if (is_operator(element[0])) {
             // char* operand1 = soft_pop(stack);
             // char* operand2 = soft_pop(stack);
 
@@ -71,7 +72,7 @@ void evaluate(t_list* expression, char** result) {
 
 
 t_list* to_postfix(t_list* expression) {
-    if(is_empty(expression))
+    if (is_empty(expression))
         return NULL;
 
     char* element = NULL;
@@ -79,29 +80,31 @@ t_list* to_postfix(t_list* expression) {
     t_list* output = create_list("char*");
     t_stack* stack = create_stack("char*");
 
-    for(curr_node = expression->head; curr_node!= NULL; curr_node=curr_node->next) {
+    for (curr_node = expression->head; curr_node!= NULL; curr_node=curr_node->next) {
         element = (char*) curr_node->data;
 
-        if(is_number(*element)) {
+        if (is_number(*element) 
+            || ( element[0] == '-' && is_number(element[1])) ) {
+
             insert_tail(output, element);
         }
 
-        else if(is_operator(*element)) {
+        else if (is_operator(*element)) {
             char* last_operator = (char*) peek(stack);
 
-            while(!is_empty(stack)
-                && get_priority(*last_operator) >= get_priority(*element)) {
+            while(!is_empty(stack) && get_priority(*last_operator) 
+                >= get_priority(*element)) {
 
                 insert_tail(output, soft_pop(stack));
             }
             push(stack, element);
         }
 
-        else if(is_bracket(*element) < 0) {
+        else if (is_bracket(*element) < 0) {
             push(stack, element);
         }
 
-        else if(is_bracket(*element) > 0) {
+        else if (is_bracket(*element) > 0) {
             while(1) {
                 char* poped = (char*) soft_pop(stack);
 
@@ -154,20 +157,20 @@ int is_valid(char expression[]) {
 
 
 int is_bracket(char c) {
-    if(c == '(' || c == '[' || c == '{')
+    if (c == '(' || c == '[' || c == '{')
 		return -1;
-	if(c == ')' || c == ']' || c == '}')
+	if (c == ')' || c == ']' || c == '}')
 		return 1;
 	return 0;
 }
 
 
 int match(char c1, char c2) {
-	if(c1 == '(' && c2 == ')')
+	if (c1 == '(' && c2 == ')')
 		return 1;
-	if(c1 == '[' && c2 == ']')
+	if (c1 == '[' && c2 == ']')
 		return 1;
-	if(c1 == '{' && c2 == '}')
+	if (c1 == '{' && c2 == '}')
 		return 1;
 	return 0;
 }
@@ -178,11 +181,11 @@ int is_balanced(char expression[]) {
     t_stack* brackets_stack = create_stack("char");
 
     for(i = 0; i < expr_lentgh; i++) {
-        if(is_bracket(expression[i]) < 0)
+        if (is_bracket(expression[i]) < 0)
             push(brackets_stack, &expression[i]);
-        if(is_bracket(expression[i]) > 0) {
-            if(!is_empty(brackets_stack)) {
-                if(match(expression[i], *((char*) peek(brackets_stack))))
+        if (is_bracket(expression[i]) > 0) {
+            if (!is_empty(brackets_stack)) {
+                if (match(expression[i], *((char*) peek(brackets_stack))))
                     remove_head(brackets_stack);
                 else {
                     soft_clear(brackets_stack);
@@ -213,13 +216,13 @@ int get_priority(char c) {
     if     (1 == 0)
     // if     (c == '(' || c == ')')
 		return 3;
-    else if(c == '^')
+    else if (c == '^')
 		return 2;
-    else if(c == '*' || c == '/')
+    else if (c == '*' || c == '/')
 		return 1;
-	else if(c == '+' || c == '-')
+	else if (c == '+' || c == '-')
 		return 0;
-	else if(is_number(c))
+	else if (is_number(c))
 		return -1;
 	else
 		return -2;
