@@ -93,5 +93,42 @@ TEST_CASE("evaluate 3", "[evaluate]") {
     free(result);
 }
 
-// "ALGUMA COISA DEU ERRADO"
-//-3*8*(0-7)
+// https://www.rhyscitlema.com/algorithms/expression-parsing-algorithm/
+// http://www2.lawrence.edu/fast/GREGGJ/CMSC150/071Calculator/Calculator.html
+TEST_CASE("evaluate 4", "[evaluate]") {
+    char* data;
+    char* result;
+    t_list* list;
+
+    char expression[] = "-3*8*(0-7)";
+
+    list = expression_to_list(expression);
+
+    evaluate(list, &result);
+    REQUIRE(string(result) == "168.00000");
+
+    clear(list); // liberar os nós e os data's
+    free(list);
+
+    free(result);
+}
+
+// 3-1*2+3-1
+TEST_CASE("evaluate 5", "[evaluate]") {
+    char* data;
+    char* result;
+    t_list* list;
+
+    char expression[] = "3-1*2+3-1";
+
+    list = expression_to_list(expression);
+
+    evaluate(list, &result);
+    REQUIRE(string(result) == "3.000000");
+
+    clear(list); // liberar os nós e os data's
+    free(list);
+
+    free(result);
+}
+
