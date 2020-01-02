@@ -1,6 +1,6 @@
 <!-- trash -->
 # Calculadora em C
-_Ainda em desenvolvimento_. Esse projeto é a revitalização de um antigo trabalho
+Esse projeto é a revitalização de um antigo trabalho
 de Estrutura de Dados para o qual era necessário implementar uma calculadora em C
 ~~porque quem é programador de verdade programa em C~~. A calculadora executa algumas
 operações básicas utilizando listas lincadas, pilhas e conversão entre as formas infixa
@@ -50,17 +50,13 @@ o framework [Catch2](https://github.com/catchorg/Catch2). Mas é só na primeira
 $ ./calculator
 ```
 
-## Fazendo
-Melhorando o algoritmo de avaliação.
-
 
 ## A fazer
-1. Continuar o testador da `main.c`. Duas formas:
+1. Incluir algumas funções (sin, cos, log).
+2. Continuar o testador da `main.c`. Duas formas:
 * dois programas rodando em paralelo: `$ ./test_main | ./calculator`
 * `input1.txt` com as entradas de comandos e expressões: `./test_main`, que, por sua vez executaria os seguintes comandos no `TEST_CASES`:
   * `system("./test_main < input1.txt");`
   * `system("./test_main < input2.txt");`
 Mas então como conferir o resultado?
-
-2. Descobrir um jeito melhor de encapsular (e deixar mais legível) as funções de receber input e diferenciar os comandos
-
+3. Descobrir um jeito melhor de encapsular (e deixar mais legível) as funções de receber input e diferenciar os comandos.
