@@ -26,8 +26,6 @@ void evaluate(t_list* expression, char** result) {
     t_list* postfix = to_postfix(expression);
     t_stack* stack = create_stack("char*");
 
-    print(postfix);
-
     for(curr_node=postfix->head; curr_node!=NULL; curr_node=curr_node->next) {
         element = (char*) curr_node->data;
 
