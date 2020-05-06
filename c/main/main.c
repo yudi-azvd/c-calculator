@@ -13,6 +13,7 @@ int main() {
     char expression[EXPRESSION_MAX_SIZE];
     char* result;
 
+    // Simulate scanf/user input: https://pubs.opengroup.org/onlinepubs/009695399/functions/freopen.html
     while (MAIN_LOOP) {
         printf("> ");
         get_expression(expression);
