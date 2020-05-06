@@ -10,7 +10,7 @@ e pós-fixa.
 ### O que ela faz?
 Aceita algumas expressões simples entradas pelo usuário e apresenta o resultado no terminal:
 
-![gif da calculadora](/C/.github/calculator.gif)
+![gif da calculadora](/c/.github/calculator.gif)
 
 
 ### Dependendências
