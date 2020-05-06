@@ -23,8 +23,8 @@ Aceita algumas expressões simples entradas pelo usuário e apresenta o resultad
 
 ## Como usar
 
-### Baixe o repositório
-Abra o terminal e digite:
+### 
+Para baixar o repositório, abra o terminal e digite:
 
 ```
 $ git clone https://github.com/y-azvd/calculator.git
@@ -32,7 +32,7 @@ $ git clone https://github.com/y-azvd/calculator.git
 
 Ou clique no botão verde no diretório raíz desse repositório.
 
-### Depois de ter baixado
+Depois de ter baixado execute no terminal:
 ```
 $ cd calculator/C
 $ mkdir build
