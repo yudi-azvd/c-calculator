@@ -22,8 +22,6 @@ Aceita algumas expressões simples entradas pelo usuário e apresenta o resultad
 
 
 ## Como usar
-
-### 
 Para baixar o repositório, abra o terminal e digite:
 
 ```
@@ -45,7 +43,7 @@ $ make
 o framework [Catch2](https://github.com/catchorg/Catch2). Mas é só na primeira vez.
 
 
-### Executar
+Para executar: 
 ```
 $ ./calculator
 ```
