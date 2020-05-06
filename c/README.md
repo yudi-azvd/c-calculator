@@ -7,13 +7,13 @@ operações básicas utilizando listas lincadas, pilhas e conversão entre as fo
 e pós-fixa.
 
 
-### O que ela faz?
+## O que ela faz?
 Aceita algumas expressões simples entradas pelo usuário e apresenta o resultado no terminal:
 
 ![gif da calculadora](/c/.github/calculator.gif)
 
 
-### Dependendências
+## Dependendências
 * git
 * gcc
 * g++
@@ -21,7 +21,7 @@ Aceita algumas expressões simples entradas pelo usuário e apresenta o resultad
 * make
 
 
-### Como usar
+## Como usar
 
 ##### Baixe o repositório
 Abra o terminal e digite:
