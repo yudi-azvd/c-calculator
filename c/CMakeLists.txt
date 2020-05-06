@@ -3,7 +3,7 @@ cmake_minimum_required(VERSION 3.10.2)
 # project(calculator LANGUAGES C CXX)
 project(calculator)
 
-
+# colocar tudo dentro de src/
 include_directories(
 	lib/
 	lib/list

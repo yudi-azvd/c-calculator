@@ -1,5 +1,5 @@
 <!-- trash -->
-# Calculadora em C
+# 🔢 Calculadora em C
 Esse projeto é a revitalização de um antigo trabalho
 de Estrutura de Dados para o qual era necessário implementar uma calculadora em C
 ~~porque quem é programador de verdade programa em C~~. A calculadora executa algumas
