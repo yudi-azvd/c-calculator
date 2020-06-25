@@ -45,6 +45,7 @@
 
 # Relacionado ao C
 ./build/*
+./build/calculator
 !./build/.gitkeep
 
 # Relacionado ao VScode
