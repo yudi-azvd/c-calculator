@@ -47,5 +47,5 @@
 ./C/build/*
 
 # Relacionado ao VScode
-calculator-c.code-workspace
+*.code-workspace
 
