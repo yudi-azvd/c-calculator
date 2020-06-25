@@ -44,8 +44,7 @@
 **/compile_commands.json
 
 # Relacionado ao C
-./build/*
-./build/calculator
+build/*
 !./build/.gitkeep
 
 # Relacionado ao VScode
