@@ -6,6 +6,8 @@ de Estrutura de Dados para o qual era necessário implementar uma calculadora em
 operações básicas utilizando listas lincadas, pilhas e conversão entre as formas infixa
 e pós-fixa.
 
+<!-- Esse projeto faz parte do projeto Calculadora(link pro repositório principal) -->
+
 
 ## O que ela faz?
 Aceita algumas expressões simples entradas pelo usuário e apresenta o resultado no terminal:
@@ -25,7 +27,7 @@ Aceita algumas expressões simples entradas pelo usuário e apresenta o resultad
 Para baixar o repositório, abra o terminal e digite:
 
 ```
-$ git clone https://github.com/y-azvd/calculator.git
+$ git clone https://github.com/y-azvd/c-calculator.git
 ```
 
 Ou clique no botão verde no diretório raíz desse repositório.
