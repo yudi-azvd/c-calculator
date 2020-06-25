@@ -1,6 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
-#include "terminal_functions.h"
+// #include "./user_interface/terminal"
 
 int main() {
   // system("../build/calculator");

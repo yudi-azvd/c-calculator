@@ -1,7 +1,7 @@
 #ifndef UTIL_H_INCLUDED
 #define UTIL_H_INCLUDED
 
-#include "list.h"
+#include "../../lib/list/list.h"
 
 void remove_whitespace(char str[]);
 

@@ -10,51 +10,52 @@ include_directories(
 
 	src/core/
 
-	src/tests/terminal_functions/
-	src/tests/list/
-	src/tests/random_tests/
+	src/__tests__/terminal_functions/
+	src/__tests__/list/
+	src/__tests__/random_tests/
 )
 
 file(GLOB CORE
 	"src/core/*.c"
 	"src/core/*.h"
+
+	"src/user_interface/*.h"
+	"src/user_interface/*.c"
 )
 
 file(GLOB LIBS
 	"lib/list/*.h"
 	"lib/list/*.c"
-
-	"lib/terminal_functions/*.h"
-	"lib/terminal_functions/*.c"
 )
+
 add_library(libs ${LIBS})
 
-file(GLOB TEST_SOURCES_TERMINAL_FUNCTIONS
-	"src/tests/terminal_functions/*.test.cpp"
-)
+# file(GLOB TEST_SOURCES_TERMINAL_FUNCTIONS
+# 	"src/__tests__/terminal_functions/*.test.cpp"
+# )
 
 file(GLOB TEST_SOURCES_RANDOM_TESTS
-	"src/tests/random_tests/*.test.c"
+	"src/__tests__/random_tests/*.test.c"
 )
 
 file(GLOB TEST_SOURCES_LIST
-	"src/tests/list/*.test.cpp"
+	"src/__tests__/list/*.test.cpp"
 )
 
 file(GLOB TEST_SOURCES_UTIL
-	"src/tests/util/*.test.cpp"
+	"src/__tests__/util/*.test.cpp"
 )
 
 file(GLOB TEST_SOURCES_ANALYSIS
-	"src/tests/analysis/*.test.cpp"
+	"src/__tests__/analysis/*.test.cpp"
 )
 
 file(GLOB TEST_SOURCES_USER_INTERFACE
-	"src/tests/user_interface/*.test.cpp"
+	"src/__tests__/user_interface/*.test.cpp"
 )
 
 file(GLOB TEST_SOURCES_CALCULATOR
-	"src/tests/calculator/*.test.cpp"
+	"src/__tests__/calculator/*.test.cpp"
 )
 
 set_source_files_properties(
@@ -82,12 +83,6 @@ add_executable(
 ############################
 ## Executáveis dos testes ##
 ############################
-add_executable(
-	test_terminal_functions
-	${LIBS}
- 	${TEST_SOURCES_TERMINAL_FUNCTIONS}
-)
-
 add_executable(
 	test_list
  	${TEST_SOURCES_LIST}

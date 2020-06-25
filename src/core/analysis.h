@@ -2,7 +2,7 @@
 #define ANALYSIS_H_INCLUDED
 
 #include <stdio.h>
-#include "list.h"
+#include "../../lib/list/list.h"
 
 int is_number(char c);
 

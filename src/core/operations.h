@@ -4,7 +4,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
-#include "list.h"
+#include "../../lib/list/list.h"
 
 #define OPERAND_MAX_SIZE 10
 
