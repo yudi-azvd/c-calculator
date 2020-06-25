@@ -32,9 +32,7 @@ Ou clique no botão verde no diretório raíz desse repositório.
 
 Depois de ter baixado execute no terminal:
 ```
-$ cd calculator/C
-$ mkdir build
-$ cd build/
+$ cd c-calculator/build/
 $ cmake ..
 $ make
 ```
