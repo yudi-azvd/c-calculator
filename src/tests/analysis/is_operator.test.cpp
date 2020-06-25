@@ -17,6 +17,7 @@ TEST_CASE("is_operator 1", "[is_operator]") {
     REQUIRE(is_operator('c') == 0);
     REQUIRE(is_operator('1') == 0);
     REQUIRE(is_operator('(') == 0);
+    REQUIRE(is_operator(' ') == 0);
 
     REQUIRE(is_operator('+') == 1);
     REQUIRE(is_operator('-') == 1);

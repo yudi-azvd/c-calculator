@@ -46,7 +46,7 @@ file(GLOB TEST_SOURCES_UTIL
 )
 
 file(GLOB TEST_SOURCES_ANALYSIS
-	"src/tests/analysis/*.cpp"
+	"src/tests/analysis/*.test.cpp"
 )
 
 file(GLOB TEST_SOURCES_USER_INTERFACE
@@ -79,7 +79,9 @@ add_executable(
 )
 
 
-# Executáveis dos testes
+############################
+## Executáveis dos testes ##
+############################
 add_executable(
 	test_terminal_functions
 	${LIBS}
