@@ -30,19 +30,19 @@ file(GLOB LIBS
 add_library(libs ${LIBS})
 
 file(GLOB TEST_SOURCES_TERMINAL_FUNCTIONS
-	"src/tests/terminal_functions/*.cpp"
+	"src/tests/terminal_functions/*.test.cpp"
 )
 
 file(GLOB TEST_SOURCES_RANDOM_TESTS
-	"src/tests/random_tests/*.c"
+	"src/tests/random_tests/*.test.c"
 )
 
 file(GLOB TEST_SOURCES_LIST
-	"src/tests/list/*.cpp"
+	"src/tests/list/*.test.cpp"
 )
 
 file(GLOB TEST_SOURCES_UTIL
-	"src/tests/util/*.cpp"
+	"src/tests/util/*.test.cpp"
 )
 
 file(GLOB TEST_SOURCES_ANALYSIS
@@ -50,11 +50,11 @@ file(GLOB TEST_SOURCES_ANALYSIS
 )
 
 file(GLOB TEST_SOURCES_USER_INTERFACE
-	"src/tests/user_interface/*.cpp"
+	"src/tests/user_interface/*.test.cpp"
 )
 
 file(GLOB TEST_SOURCES_CALCULATOR
-	"src/tests/calculator/*.cpp"
+	"src/tests/calculator/*.test.cpp"
 )
 
 set_source_files_properties(

@@ -35,7 +35,7 @@ TEST_CASE("tests on is_balanced", "[is_balanced]") {
     char answer_filename[FILENAME_MAX]; // Vem de stdio.h
     char expression[EXPRESSION_LEN_MAX];
 
-    // Se os executáveis mudarem de diretório, tem que mudar essas linhas.
+    // Se os executáveis mudarem de diretório, tem que mudar essas linhas?.
     const char filename1[] = "../tests/calculator/check_brackets_in_code/%02d";
     const char filename2[] = "../tests/calculator/check_brackets_in_code/%02d.a";
 
@@ -47,6 +47,8 @@ TEST_CASE("tests on is_balanced", "[is_balanced]") {
     for (int i = 1; i <= NUMBER_OF_TESTS; i++) {
         snprintf(test_filename,   FILENAME_MAX, filename1, i);
         snprintf(answer_filename, FILENAME_MAX, filename2, i);
+
+        cout << test_filename << endl;
 
         SECTION(string(test_filename)) {
             test_file.open(test_filename);
