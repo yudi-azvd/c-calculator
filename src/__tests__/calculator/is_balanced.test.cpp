@@ -36,8 +36,8 @@ TEST_CASE("tests on is_balanced", "[is_balanced]") {
     char expression[EXPRESSION_LEN_MAX];
 
     // Se os executáveis mudarem de diretório, tem que mudar essas linhas?.
-    const char filename1[] = "../src/__tests__/calculator/check_brackets_in_code/%02d";
-    const char filename2[] = "../src/__tests__/calculator/check_brackets_in_code/%02d.a";
+    const char filename1[] = "../src/__tests__/calculator/check_brackets_in_code/%02d.txt";
+    const char filename2[] = "../src/__tests__/calculator/check_brackets_in_code/%02d.answer.txt";
 
     string test_line, answer_line;
 
