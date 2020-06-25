@@ -13,7 +13,7 @@ extern "C" {
 #endif
 
 
-TEST_CASE("create, insert, remove e free(list)", "[list]") {
+TEST_CASE("create; insert; remove e free(list)", "[list]") {
     t_list* integers = create_list("int");
 
     int a = 5;
@@ -29,7 +29,7 @@ TEST_CASE("create, insert, remove e free(list)", "[list]") {
 
 // soft_clear é para listas cujas ponteiros data não foram
 // alocados dinamicamente.
-TEST_CASE("create, insert_head, soft_clear e free(list)", "[list]") {
+TEST_CASE("create; insert_head; soft_clear e free(list)", "[list]") {
     //! [soft_clear_1]
     t_list* integers = create_list("int");
 
