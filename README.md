@@ -6,6 +6,8 @@ de Estrutura de Dados para o qual era necessário implementar uma calculadora em
 operações básicas utilizando listas lincadas, pilhas e conversão entre as formas infixa
 e pós-fixa.
 
+Esse projeto faz parte de um "projeto maior" de [calculadoras](https://github.com/yudi-azvd/calculator).
+
 <!-- Esse projeto faz parte do projeto Calculadora(link pro repositório principal) -->
 
 
