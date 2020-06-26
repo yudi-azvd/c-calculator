@@ -7,7 +7,7 @@
 extern "C" {
 #endif
 
-#include "calculator.h"
+#include "../../core/calculator.h"
 #include <string.h>
 
 #ifdef _TEST_CALCULATOR

@@ -12,7 +12,7 @@ extern "C" {
 #endif
 
 #include <string.h>
-#include "calculator.h"
+#include "../../core/calculator.h"
 
 #ifdef _TEST_CALCULATOR
 }
