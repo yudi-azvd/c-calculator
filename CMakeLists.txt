@@ -58,6 +58,10 @@ file(GLOB TEST_SOURCES_CALCULATOR
 	"src/__tests__/calculator/*.test.cpp"
 )
 
+file(GLOB TEST_DOCTEST
+	"src/__tests__/doctest/*.test.cpp"
+)
+
 set_source_files_properties(
 	TEST_SOURCES_RANDOM_TESTS
 	PROPERTIES
@@ -114,6 +118,13 @@ add_executable(
 	test_calculator
 	${CORE}
  	${TEST_SOURCES_CALCULATOR}
+	${LIBS}
+)
+
+add_executable(
+	test_doctest
+	${CORE}
+ 	${TEST_DOCTEST}
 	${LIBS}
 )
 
