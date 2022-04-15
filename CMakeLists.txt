@@ -3,7 +3,7 @@ cmake_minimum_required(VERSION 3.10.2)
 project(calculator)
 
 include_directories(
-	lib/
+	lib/catch2/
 	lib/list
 	lib/terminal_functions
 
