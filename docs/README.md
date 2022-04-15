@@ -5,12 +5,12 @@ Fluxo geral:
 ```
 ler expressão entrada pelo usuário
 
-validar
+validar: pode retornar erros
 sanitizar
 
-parse
+parse: pode retornar erros
 
-calcular/avaliar
+calcular/avaliar: pode retornar erros?
 
 mostrar resultado/erros
 ```

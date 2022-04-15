@@ -1,5 +1,5 @@
 // #include <iostream>
-// #include "../../../lib/catch2/catch.hpp"
+// #include "catch2/catch.hpp"
 
 // using std::string;
 // using std::cout;

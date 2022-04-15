@@ -1,4 +1,4 @@
-#include "analysis.h"
+#include "parser.h"
 
 
 /**
@@ -76,7 +76,7 @@ int find_number_end(char str[], int start) {
 }
 
 
-t_list* expression_to_list(char expression[]) {
+t_list* tokenize(char expression[]) {
     int i, end, expr_len = strlen(expression);
     char* element;
     t_list* list = create_list("char*");

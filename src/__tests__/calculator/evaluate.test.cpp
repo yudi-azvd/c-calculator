@@ -1,4 +1,4 @@
-#include "../../../lib/catch2/catch.hpp"
+#include "catch2/catch.hpp"
 #include <iostream>
 
 using std::string;
@@ -28,7 +28,7 @@ TEST_CASE("evaluate 0", "[evaluate]") {
 
     char expression[] = "3*(8+4)/2";
 
-    list = expression_to_list(expression);
+    list = tokenize(expression);
 
     evaluate(list, &result);
     REQUIRE(string(result) == "18.000000");
@@ -46,7 +46,7 @@ TEST_CASE("evaluate 1", "[evaluate]") {
 
     char expression[] = "-30.0*(8+4)/2";
 
-    list = expression_to_list(expression);
+    list = tokenize(expression);
 
     evaluate(list, &result);
     REQUIRE(string(result) == "-180.0000");
@@ -64,7 +64,7 @@ TEST_CASE("evaluate 2", "[evaluate]") {
 
     char expression[] = "2";
 
-    list = expression_to_list(expression);
+    list = tokenize(expression);
 
     evaluate(list, &result);
     REQUIRE(string(result) == "2");
@@ -82,7 +82,7 @@ TEST_CASE("evaluate 3", "[evaluate]") {
 
     char expression[] = "-2";
 
-    list = expression_to_list(expression);
+    list = tokenize(expression);
 
     evaluate(list, &result);
     REQUIRE(string(result) == "-2");
@@ -102,7 +102,7 @@ TEST_CASE("evaluate 4", "[evaluate]") {
 
     char expression[] = "-3*8*(0-7)";
 
-    list = expression_to_list(expression);
+    list = tokenize(expression);
 
     evaluate(list, &result);
     REQUIRE(string(result) == "168.00000");
@@ -121,7 +121,7 @@ TEST_CASE("evaluate 5", "[evaluate]") {
 
     char expression[] = "3-1*2+3-1";
 
-    list = expression_to_list(expression);
+    list = tokenize(expression);
 
     evaluate(list, &result);
     REQUIRE(string(result) == "3.000000");

@@ -15,7 +15,7 @@ void calculate(char expression[], char** result) {
 
     if (is_valid(expression)) {
         // tokenize
-        t_list* list = expression_to_list(expression);
+        t_list* list = tokenize(expression);
 
         evaluate(list, result);
         clear(list);

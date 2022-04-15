@@ -50,6 +50,10 @@ Para executar:
 $ ./calculator
 ```
 
+## Documentação
+
+Para saber mais sobre a calculadora, cheque a [documentação](./docs/README.md).
+
 
 ## A fazer
 1. Incluir algumas funções (sin, cos, log).

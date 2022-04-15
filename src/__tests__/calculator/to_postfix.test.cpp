@@ -1,4 +1,4 @@
-#include "../../../lib/catch2/catch.hpp"
+#include "catch2/catch.hpp"
 #include <iostream>
 
 using std::string;
@@ -20,6 +20,9 @@ extern "C" {
 }
 #endif
 
+char* get_at(t_list* l, int index) {
+    return (char*) get_at_index(l, index);
+}
 
 TEST_CASE("to_postfix", "[to_postfix]") {
     char* data;
@@ -29,7 +32,7 @@ TEST_CASE("to_postfix", "[to_postfix]") {
     SECTION("to_postfix 0") {
         char expression[] = "";
 
-        list = expression_to_list(expression);
+        list = tokenize(expression);
         postfix = to_postfix(list);
 
         REQUIRE(postfix == NULL);
@@ -41,28 +44,28 @@ TEST_CASE("to_postfix", "[to_postfix]") {
         // char output[] = "3 8 3.5 + * 1.2 /";
 
         // list = expression_to_list(expression);
-        list = expression_to_list(expression);
+        list = tokenize(expression);
         postfix = to_postfix(list);
 
-        data = (char*) get_at_index(postfix, 0);
+        data = get_at(postfix, 0);
         REQUIRE(string(data) == "3");
 
-        data = (char*) get_at_index(postfix, 1);
+        data = get_at(postfix, 1);
         REQUIRE(string(data) == "8");
 
-        data = (char*) get_at_index(postfix, 2);
+        data = get_at(postfix, 2);
         REQUIRE(string(data) == "3.5");
 
-        data = (char*) get_at_index(postfix, 3);
+        data = get_at(postfix, 3);
         REQUIRE(string(data) == "+");
 
-        data = (char*) get_at_index(postfix, 4);
+        data = get_at(postfix, 4);
         REQUIRE(string(data) == "*");
 
-        data = (char*) get_at_index(postfix, 5);
+        data = get_at(postfix, 5);
         REQUIRE(string(data) == "1.2");
 
-        data = (char*) get_at_index(postfix, 6);
+        data = get_at(postfix, 6);
         REQUIRE(string(data) == "/");
     }
 
@@ -70,22 +73,22 @@ TEST_CASE("to_postfix", "[to_postfix]") {
     SECTION("to_postfix 2") {
         char expression[] = "3*(8)+(1.2)";
 
-        list = expression_to_list(expression);
+        list = tokenize(expression);
         postfix = to_postfix(list);
 
-        data = (char*) get_at_index(postfix, 0);
+        data = get_at(postfix, 0);
         REQUIRE(string(data) == "3");
 
-        data = (char*) get_at_index(postfix, 1);
+        data = get_at(postfix, 1);
         REQUIRE(string(data) == "8");
 
-        data = (char*) get_at_index(postfix, 2);
+        data = get_at(postfix, 2);
         REQUIRE(string(data) == "*");
 
-        data = (char*) get_at_index(postfix, 3);
+        data = get_at(postfix, 3);
         REQUIRE(string(data) == "1.2");
 
-        data = (char*) get_at_index(postfix, 4);
+        data = get_at(postfix, 4);
         REQUIRE(string(data) == "+");
     }
 
@@ -93,31 +96,31 @@ TEST_CASE("to_postfix", "[to_postfix]") {
         char expression[] = "3^3/(5*4.1)+0.2";
         // char expression[] = "3 ^ 3 / (5 * 4.1) + 0.2";
 
-        list = expression_to_list(expression);
+        list = tokenize(expression);
         postfix = to_postfix(list);
 
-        data = (char*) get_at_index(postfix, 0);
+        data = get_at(postfix, 0);
         REQUIRE(string(data) == "3");
 
-        data = (char*) get_at_index(postfix, 1);
+        data = get_at(postfix, 1);
         REQUIRE(string(data) == "3");
 
-        data = (char*) get_at_index(postfix, 2);
+        data = get_at(postfix, 2);
         REQUIRE(string(data) == "^");
 
-        data = (char*) get_at_index(postfix, 3);
+        data = get_at(postfix, 3);
         REQUIRE(string(data) == "5");
 
-        data = (char*) get_at_index(postfix, 4);
+        data = get_at(postfix, 4);
         REQUIRE(string(data) == "4.1");
 
-        data = (char*) get_at_index(postfix, 5);
+        data = get_at(postfix, 5);
         REQUIRE(string(data) == "*");
 
-        data = (char*) get_at_index(postfix, 6);
+        data = get_at(postfix, 6);
         REQUIRE(string(data) == "/");
 
-        data = (char*) get_at_index(postfix, 7);
+        data = get_at(postfix, 7);
         REQUIRE(string(data) == "0.2");
     }
 
@@ -128,19 +131,19 @@ TEST_CASE("to_postfix", "[to_postfix]") {
     //     postfix = to_postfix(list);
     //     // print(postfix);
     //
-    //     data = (char*) get_at_index(postfix, 0);
+    //     data = get_at(postfix, 0);
     //     REQUIRE(string(data) == "3");
     //
-    //     data = (char*) get_at_index(postfix, 1);
+    //     data = get_at(postfix, 1);
     //     REQUIRE(string(data) == "3");
     //
-    //     data = (char*) get_at_index(postfix, 2);
+    //     data = get_at(postfix, 2);
     //     REQUIRE(string(data) == "5");
     //
-    //     data = (char*) get_at_index(postfix, 3);
+    //     data = get_at(postfix, 3);
     //     REQUIRE(string(data) == "4.1");
     //
-    //     data = (char*) get_at_index(postfix, 4);
+    //     data = get_at(postfix, 4);
     //     REQUIRE(string(data) == "*");
     //
     //     // 3 3 5 4.1 * 0.2 ^ ^ ^
@@ -153,19 +156,19 @@ TEST_CASE("to_postfix", "[to_postfix]") {
     //     postfix = to_postfix(list);
     //     print(postfix);
     //
-    //     data = (char*) get_at_index(postfix, 0);
+    //     data = get_at(postfix, 0);
     //     REQUIRE(string(data) == "3");
     //
-    //     data = (char*) get_at_index(postfix, 1);
+    //     data = get_at(postfix, 1);
     //     REQUIRE(string(data) == "3");
     //
-    //     data = (char*) get_at_index(postfix, 2);
+    //     data = get_at(postfix, 2);
     //     REQUIRE(string(data) == "5");
     //
-    //     data = (char*) get_at_index(postfix, 3);
+    //     data = get_at(postfix, 3);
     //     REQUIRE(string(data) == "^");
     //
-    //     data = (char*) get_at_index(postfix, 4);
+    //     data = get_at(postfix, 4);
     //     REQUIRE(string(data) == "^");
     //
     //     // 3 3 5 ^ ^ 4.1 0.2 ^ *

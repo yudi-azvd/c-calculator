@@ -33,7 +33,7 @@ TEST_CASE("list") {
 
   char expression[] = "3*(8+4)/2";
 
-  list = expression_to_list(expression);
+  list = tokenize(expression);
 
   std::cout << "this is working" << std::endl;
 

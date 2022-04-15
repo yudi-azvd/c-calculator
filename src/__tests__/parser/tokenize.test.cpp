@@ -1,4 +1,4 @@
-#include "../../../lib/catch2/catch.hpp"
+#include "catch2/catch.hpp"
 #include <iostream>
 #include <string.h>
 
@@ -6,22 +6,22 @@ using namespace std;
 
 // Esse pedaço é só pra incluir uma biblioteca
 // que deve ser tratada como código C.
-#ifndef _TEST_ANALYSIS
-#define _TEST_ANALYSIS
+#ifndef _TEST_PARSER
+#define _TEST_PARSER
 extern "C" {
 #endif
-    #include "../../core/analysis.h"
-#ifdef _TEST_ANALYSIS
+    #include "../../core/parser.h"
+#ifdef _TEST_PARSER
 }
 #endif
 
-TEST_CASE("expression_to_list", "[expression_to_list]") {
+TEST_CASE("tokenize", "[tokenize]") {
     t_list* list;
 
     SECTION("1") {
         char expression[] = "3*1.5+4";
 
-        list = expression_to_list(expression);
+        list = tokenize(expression);
 
         string str = ((char*) get_at_index(list, 0));
         REQUIRE(str == "3");
@@ -42,7 +42,7 @@ TEST_CASE("expression_to_list", "[expression_to_list]") {
     SECTION("2") {
         char expression[] = "3.000*1.5689+4^";
 
-        list = expression_to_list(expression);
+        list = tokenize(expression);
 
         string str = ((char*) get_at_index(list, 0));
         REQUIRE(str == "3.000");
@@ -67,7 +67,7 @@ TEST_CASE("expression_to_list", "[expression_to_list]") {
     SECTION("issue GH#2") {
         char expression[] = "3*3-6/2";
 
-        list = expression_to_list(expression);
+        list = tokenize(expression);
 
         string str = (char*) get_at_index(list, 0);
         REQUIRE(string(str) == "3");

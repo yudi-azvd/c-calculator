@@ -1,15 +1,15 @@
-#include "../../../lib/catch2/catch.hpp"
+#include "catch2/catch.hpp"
 #include <string.h>
 
 using namespace std;
 
 // Esse pedaço é só pra incluir uma biblioteca
 // que deve ser tratada como código C.
-#ifndef _TEST_ANALYSIS
-#define _TEST_ANALYSIS
+#ifndef _TEST_PARSER
+#define _TEST_PARSER
 extern "C" {
 #endif
-    #include "../../core/analysis.h"
-#ifdef _TEST_ANALYSIS
+    #include "../../core/parser.h"
+#ifdef _TEST_PARSER
 }
 #endif

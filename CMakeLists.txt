@@ -46,8 +46,8 @@ file(GLOB TEST_SOURCES_UTIL
 	"src/__tests__/util/*.test.cpp"
 )
 
-file(GLOB TEST_SOURCES_ANALYSIS
-	"src/__tests__/analysis/*.test.cpp"
+file(GLOB TEST_SOURCES_PARSER
+	"src/__tests__/parser/*.test.cpp"
 )
 
 file(GLOB TEST_SOURCES_USER_INTERFACE
@@ -101,9 +101,9 @@ add_executable(
 )
 
 add_executable(
-	test_analysis
+	test_parser
 	${CORE}
- 	${TEST_SOURCES_ANALYSIS}
+ 	${TEST_SOURCES_PARSER}
 	${LIBS}
 )
 

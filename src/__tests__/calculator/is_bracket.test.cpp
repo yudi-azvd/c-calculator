@@ -1,4 +1,4 @@
-#include "../../../lib/catch2/catch.hpp"
+#include "catch2/catch.hpp"
 
 // Esse pedaço é só pra incluir uma biblioteca
 // que deve ser tratada como código C.

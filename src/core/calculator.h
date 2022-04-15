@@ -4,7 +4,7 @@
 #include <stdio.h>
 #include <string.h>
 #include "../../lib/list/list.h"
-#include "analysis.h"
+#include "parser.h"
 #include "util.h"
 #include "operations.h"
 
@@ -27,13 +27,13 @@ t_list* to_postfix(t_list* list);
 /* retornar um código de erro */
 int is_valid(char expression[]);
 
-/* tem mais cara de estar em ANALYSIS.H? */
+/* tem mais cara de estar em PARSER.H? */
 int is_bracket(char c);
 
-/* tem mais cara de estar em ANALYSIS.H? */
+/* tem mais cara de estar em PARSER.H? */
 int match(char c1, char c2);
 
-/* tem mais cara de estar em ANALYSIS.H? */
+/* tem mais cara de estar em PARSER.H? */
 int is_balanced(char expression[]);
 
 /* compilador reclama se o argumento for "operator" */
