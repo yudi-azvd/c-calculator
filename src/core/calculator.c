@@ -1,6 +1,16 @@
 #include "calculator.h"
 
+void print_list(t_list *l) {
+    t_node* node = l->head;
+    while (node != NULL) {
+        printf("[%s] ", (char*) node->data);
+        node = node->next;
+    }
+    printf("\n");
+}
+
 void calculate(char expression[], char** result) {
+    // validate(expression);
     sanitize(expression);
 
     if (is_valid(expression)) {
@@ -39,9 +49,6 @@ void evaluate(t_list* expression, char** result) {
             // push(stack, element);
         }
         else if (is_operator(element[0])) {
-            // char* operand1 = soft_pop(stack);
-            // char* operand2 = soft_pop(stack);
-
             char* operand1 = soft_pop(stack);
             char* operand2 = soft_pop(stack);
             char* result = NULL;
@@ -88,22 +95,19 @@ t_list* to_postfix(t_list* expression) {
 
             insert_tail(output, element);
         }
-
         else if (is_operator(*element)) {
             char* last_operator = (char*) peek(stack);
 
-            while(!is_empty(stack) && get_priority(*last_operator) 
-                >= get_priority(*element)) {
+            while(!is_empty(stack) && 
+                (get_priority(*last_operator) >= get_priority(*element))) {
 
                 insert_tail(output, soft_pop(stack));
             }
             push(stack, element);
         }
-
         else if (is_bracket(*element) < 0) {
             push(stack, element);
         }
-
         else if (is_bracket(*element) > 0) {
             while(1) {
                 char* poped = (char*) soft_pop(stack);

@@ -58,5 +58,6 @@ $ ./calculator
 * `input1.txt` com as entradas de comandos e expressões: `./test_main`, que, por sua vez executaria os seguintes comandos no `TEST_CASES`:
   * `system("./test_main < input1.txt");`
   * `system("./test_main < input2.txt");`
-Mas então como conferir o resultado?
+Mas então como conferir o resultado? Dar uma olhada no trabalho de [EDA2](https://github.com/yudi-azvd/EDA2-Trabalho-2) na parte da interação entre o programa do joagdor e do árbitro.
+
 3. Descobrir um jeito melhor de encapsular (e deixar mais legível) as funções de receber input e diferenciar os comandos.

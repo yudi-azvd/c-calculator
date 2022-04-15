@@ -1,3 +1,22 @@
 {
-  "cmake.configureOnOpen": true
+  "cmake.configureOnOpen": true,
+  "testMate.cpp.test.advancedExecutables": [
+    {
+      // https://github.com/matepek/vscode-catch2-test-adapter/blob/master/documents/configuration/test.advancedExecutables.md#testgrouping
+      "pattern": "{build,Build,BUILD,out,Out,OUT}/**/*{test,Test,TEST,ut}*",
+      "catch2": {
+        "testGrouping": {
+          "groupByExecutable": {
+            "label": "${filename}",
+            "description": "${relDirpath}/",
+            "groupByTags": {
+              // "tags": [],
+              "label": "${tags}"
+            },
+          },
+        }
+      },
+    }
+  ],
+
 }

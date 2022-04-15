@@ -22,6 +22,10 @@ int main() {
             return 0;
 
         calculate(expression, &result);
+
+        // if (global error variable is set to true)
+        //      print error message
+        // else
         display(result);
         free(result);
     }

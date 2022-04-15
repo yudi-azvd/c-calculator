@@ -8,6 +8,6 @@
 
 #define OPERAND_MAX_SIZE 10
 
-char* operate(char* operand1, char* operand2, char* oper4tor);
+char* operate(char* operand1, char* operand2, char* operation);
 
 #endif

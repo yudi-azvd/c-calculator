@@ -70,7 +70,7 @@ set_source_files_properties(
 )
 # set(GCC_COVERAGE_COMPILE_FLAGS "-Wall -ansi -std=c99")
 # é o jeito que deu certo compilar código em C no padrão ANSI.
-set(CMAKE_C_FLAGS "-Wall -ansi -std=c99")
+set(CMAKE_C_FLAGS "-Wall -g -ansi -std=c99")
 
 # message(STATUS "random tests: ${TEST_SOURCES_RANDOM_TESTS}")
 

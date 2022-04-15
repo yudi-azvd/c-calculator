@@ -63,6 +63,34 @@ TEST_CASE("expression_to_list", "[expression_to_list]") {
         REQUIRE(str == "^");
     }
 
+    // https://github.com/yudi-azvd/c-calculator/issues/2
+    SECTION("issue GH#2") {
+        char expression[] = "3*3-6/2";
+
+        list = expression_to_list(expression);
+
+        string str = (char*) get_at_index(list, 0);
+        REQUIRE(string(str) == "3");
+
+        str = (char*) get_at_index(list, 1);
+        REQUIRE(string(str) == "*");
+
+        str = (char*) get_at_index(list, 2);
+        REQUIRE(string(str) == "3");
+
+        str = (char*) get_at_index(list, 3);
+        REQUIRE(string(str) == "-");
+
+        str = (char*) get_at_index(list, 4);
+        REQUIRE(string(str) == "6");
+
+        str = (char*) get_at_index(list, 5);
+        REQUIRE(string(str) == "/");
+
+        str = (char*) get_at_index(list, 6);
+        REQUIRE(string(str) == "2");
+    }
+
     clear(list);
     free(list);
 }
