@@ -10,7 +10,6 @@
             "label": "${filename}",
             "description": "${relDirpath}/",
             "groupByTags": {
-              // "tags": [],
               "label": "${tags}"
             },
           },
@@ -18,5 +17,4 @@
       },
     }
   ],
-
 }
