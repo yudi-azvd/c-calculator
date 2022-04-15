@@ -54,6 +54,13 @@ $ ./calculator
 
 Para saber mais sobre a calculadora, cheque a [documentação](./docs/README.md).
 
+## Extensões úteis para VSCode
+
+- C/C++
+- CMake
+- CMake Tools
+- C++ TestMate
+
 
 ## A fazer
 1. Incluir algumas funções (sin, cos, log).

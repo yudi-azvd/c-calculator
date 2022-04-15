@@ -1,6 +1,5 @@
 cmake_minimum_required(VERSION 3.10.2)
 
-# project(calculator LANGUAGES C CXX)
 project(calculator)
 
 include_directories(
@@ -9,6 +8,7 @@ include_directories(
 	lib/terminal_functions
 
 	src/core/
+	src/ui/
 
 	src/__tests__/terminal_functions/
 	src/__tests__/list/
@@ -19,8 +19,8 @@ file(GLOB CORE
 	"src/core/*.c"
 	"src/core/*.h"
 
-	"src/user_interface/*.h"
-	"src/user_interface/*.c"
+	"src/ui/*.h"
+	"src/ui/*.c"
 )
 
 file(GLOB LIBS
@@ -30,36 +30,9 @@ file(GLOB LIBS
 
 add_library(libs ${LIBS})
 
-# file(GLOB TEST_SOURCES_TERMINAL_FUNCTIONS
-# 	"src/__tests__/terminal_functions/*.test.cpp"
-# )
-
-file(GLOB TEST_SOURCES_RANDOM_TESTS
-	"src/__tests__/random_tests/*.test.c"
-)
-
-file(GLOB TEST_SOURCES_LIST
-	"src/__tests__/list/*.test.cpp"
-)
-
-file(GLOB TEST_SOURCES_UTIL
-	"src/__tests__/util/*.test.cpp"
-)
-
-file(GLOB TEST_SOURCES_PARSER
-	"src/__tests__/parser/*.test.cpp"
-)
-
-file(GLOB TEST_SOURCES_USER_INTERFACE
-	"src/__tests__/user_interface/*.test.cpp"
-)
-
-file(GLOB TEST_SOURCES_CALCULATOR
-	"src/__tests__/calculator/*.test.cpp"
-)
-
-file(GLOB TEST_DOCTEST
-	"src/__tests__/doctest/*.test.cpp"
+file(GLOB TEST_SOURCES
+	"src/__tests__/**/*.test.cpp"
+	"src/__tests__/main.test.cpp"
 )
 
 set_source_files_properties(
@@ -88,46 +61,11 @@ add_executable(
 ## Executáveis dos testes ##
 ############################
 add_executable(
-	test_list
- 	${TEST_SOURCES_LIST}
-	${LIBS}
-)
-
-add_executable(
-	test_util
+	test
 	${CORE}
- 	${TEST_SOURCES_UTIL}
+ 	${TEST_SOURCES}
 	${LIBS}
 )
-
-add_executable(
-	test_parser
-	${CORE}
- 	${TEST_SOURCES_PARSER}
-	${LIBS}
-)
-
-add_executable(
-	test_user_interface
-	${CORE}
- 	${TEST_SOURCES_USER_INTERFACE}
-	${LIBS}
-)
-
-add_executable(
-	test_calculator
-	${CORE}
- 	${TEST_SOURCES_CALCULATOR}
-	${LIBS}
-)
-
-add_executable(
-	test_doctest
-	${CORE}
- 	${TEST_DOCTEST}
-	${LIBS}
-)
-
 
 # Compilar os testes aletórios
 # foreach(src_file ${TEST_SOURCES_RANDOM_TESTS})
