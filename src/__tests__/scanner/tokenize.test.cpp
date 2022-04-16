@@ -6,12 +6,12 @@ using namespace std;
 
 // Esse pedaço é só pra incluir uma biblioteca
 // que deve ser tratada como código C.
-#ifndef _TEST_PARSER
-#define _TEST_PARSER
+#ifndef _TEST_SCANNER
+#define _TEST_SCANNER
 extern "C" {
 #endif
-    #include "../../core/scanner.h"
-#ifdef _TEST_PARSER
+    #include "scanner.h"
+#ifdef _TEST_SCANNER
 }
 #endif
 
@@ -63,7 +63,7 @@ TEST_CASE("tokenize", "[tokenize]") {
         REQUIRE(str == "^");
     }
 
-    // https://github.com/yudi-azvd/c-calculator/issues/2
+    // https://github.com/yudi-azvd/c-calculator/issues/2#issuecomment-1039256295
     SECTION("issue GH#2") {
         char expression[] = "3*3-6/2";
 

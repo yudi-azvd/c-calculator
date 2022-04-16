@@ -1,4 +1,4 @@
-#include "util.h"
+#include "sanitization.h"
 
 void remove_whitespace(char str[]) {
     int i, j, str_len = strlen(str);

@@ -10,7 +10,7 @@ extern "C" {
 #endif
 
 #include <string.h>
-#include "util.h"
+#include "sanitization.h"
 
 #ifdef _TEST_CALCULATOR
 }

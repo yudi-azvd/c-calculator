@@ -79,7 +79,7 @@ int find_number_end(char str[], int start) {
 t_list* tokenize(char expression[]) {
     int i, end, expr_len = strlen(expression);
     char* element;
-    t_list* list = create_list("char*");
+    t_list* tokens = create_list("char*");
 
     for(i = 0; i < expr_len; i++) {
         if (is_bracket(expression[i]) != 0) {
@@ -87,7 +87,7 @@ t_list* tokenize(char expression[]) {
             element[0] = expression[i];
             element[1] = '\0';
 
-            insert_tail(list, element);
+            insert_tail(tokens, element);
         }
         else if (is_operator(expression[i])) {
             if (expression[i] == '-' && is_number(expression[i+1])) {
@@ -95,16 +95,16 @@ t_list* tokenize(char expression[]) {
                 element = (char*) calloc(end-i+1, sizeof(char));
                 i += copy_to(element, expression, i, end) + 1;
 
-                void* data = get_tail(list);
+                void* data = get_tail(tokens);
                 if (data && is_number(*((char*) data)) ) {
                     char* plus_element = calloc(2, sizeof(char));
                     plus_element[0] = '+';
                     plus_element[1] = '\0';
-                    insert_tail(list, element);
-                    insert_tail(list, plus_element);
+                    insert_tail(tokens, element);
+                    insert_tail(tokens, plus_element);
                 }
                 else {
-                    insert_tail(list, element);
+                    insert_tail(tokens, element);
                 }
             }
 
@@ -112,7 +112,7 @@ t_list* tokenize(char expression[]) {
             element[0] = expression[i];
             element[1] = '\0';
 
-            insert_tail(list, element);
+            insert_tail(tokens, element);
         }
         else if (is_function(expression[i])) {
             /**
@@ -126,12 +126,12 @@ t_list* tokenize(char expression[]) {
             element = (char*) calloc(end-i+1, sizeof(char));
             i += copy_to(element, expression, i, end);
 
-            insert_tail(list, element);
+            insert_tail(tokens, element);
         }
         else {
             printf("o que é então? [%c]\n", expression[i]);
         }
     }
 
-    return list;
+    return tokens;
 }

@@ -4,8 +4,8 @@ project(calculator)
 
 include_directories(
 	lib/catch2/
-	lib/list
-	lib/terminal_functions
+	lib/list/
+	lib/terminal_functions/
 
 	src/core/
 	src/ui/

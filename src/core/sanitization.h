@@ -1,7 +1,7 @@
-#ifndef UTIL_H_INCLUDED
-#define UTIL_H_INCLUDED
+#ifndef SANITIZATION_H_INCLUDED
+#define SANITIZATION_H_INCLUDED
 
-#include "../../lib/list/list.h"
+#include "list.h"
 
 void remove_whitespace(char str[]);
 

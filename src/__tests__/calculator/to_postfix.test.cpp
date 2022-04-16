@@ -14,15 +14,12 @@ extern "C" {
 
 #include <stdio.h>
 #include <string.h>
-#include "../../core/calculator.h"
+#include "calculator.h"
+#include "list_util.h"
 
 #ifdef _TEST_CALCULATOR
 }
 #endif
-
-char* get_at(t_list* l, int index) {
-    return (char*) get_at_index(l, index);
-}
 
 TEST_CASE("to_postfix", "[to_postfix]") {
     char* data;
@@ -31,8 +28,7 @@ TEST_CASE("to_postfix", "[to_postfix]") {
 
     SECTION("to_postfix 0") {
         char expression[] = "";
-
-        list = tokenize(expression);
+        list = create_char_list_from(expression);
         postfix = to_postfix(list);
 
         REQUIRE(postfix == NULL);
@@ -40,137 +36,128 @@ TEST_CASE("to_postfix", "[to_postfix]") {
 
 
     SECTION("to_postfix 1") {
-        char expression[] = "3*(8+3.5)/1.2";
-        // char output[] = "3 8 3.5 + * 1.2 /";
-
-        // list = expression_to_list(expression);
-        list = tokenize(expression);
+        char expression[] = "3 * ( 8 + 3.5 ) / 1.2";
+        list = create_char_list_from(expression);
         postfix = to_postfix(list);
 
-        data = get_at(postfix, 0);
+        data = get_char_at(postfix, 0);
         REQUIRE(string(data) == "3");
 
-        data = get_at(postfix, 1);
+        data = get_char_at(postfix, 1);
         REQUIRE(string(data) == "8");
 
-        data = get_at(postfix, 2);
+        data = get_char_at(postfix, 2);
         REQUIRE(string(data) == "3.5");
 
-        data = get_at(postfix, 3);
+        data = get_char_at(postfix, 3);
         REQUIRE(string(data) == "+");
 
-        data = get_at(postfix, 4);
+        data = get_char_at(postfix, 4);
         REQUIRE(string(data) == "*");
 
-        data = get_at(postfix, 5);
+        data = get_char_at(postfix, 5);
         REQUIRE(string(data) == "1.2");
 
-        data = get_at(postfix, 6);
+        data = get_char_at(postfix, 6);
         REQUIRE(string(data) == "/");
     }
 
 
     SECTION("to_postfix 2") {
-        char expression[] = "3*(8)+(1.2)";
-
-        list = tokenize(expression);
+        char expression[] = " 3 * ( 8 ) + ( 1.2 )";
+        list = create_char_list_from(expression);
         postfix = to_postfix(list);
 
-        data = get_at(postfix, 0);
+        data = get_char_at(postfix, 0);
         REQUIRE(string(data) == "3");
 
-        data = get_at(postfix, 1);
+        data = get_char_at(postfix, 1);
         REQUIRE(string(data) == "8");
 
-        data = get_at(postfix, 2);
+        data = get_char_at(postfix, 2);
         REQUIRE(string(data) == "*");
 
-        data = get_at(postfix, 3);
+        data = get_char_at(postfix, 3);
         REQUIRE(string(data) == "1.2");
 
-        data = get_at(postfix, 4);
+        data = get_char_at(postfix, 4);
         REQUIRE(string(data) == "+");
     }
 
     SECTION("to_postfix 3") {
-        char expression[] = "3^3/(5*4.1)+0.2";
-        // char expression[] = "3 ^ 3 / (5 * 4.1) + 0.2";
-
-        list = tokenize(expression);
+        char expression[] = "3 ^ 3 / ( 5 * 4.1 ) + 0.2";
+        list = create_char_list_from(expression);
         postfix = to_postfix(list);
 
-        data = get_at(postfix, 0);
+        data = get_char_at(postfix, 0);
         REQUIRE(string(data) == "3");
 
-        data = get_at(postfix, 1);
+        data = get_char_at(postfix, 1);
         REQUIRE(string(data) == "3");
 
-        data = get_at(postfix, 2);
+        data = get_char_at(postfix, 2);
         REQUIRE(string(data) == "^");
 
-        data = get_at(postfix, 3);
+        data = get_char_at(postfix, 3);
         REQUIRE(string(data) == "5");
 
-        data = get_at(postfix, 4);
+        data = get_char_at(postfix, 4);
         REQUIRE(string(data) == "4.1");
 
-        data = get_at(postfix, 5);
+        data = get_char_at(postfix, 5);
         REQUIRE(string(data) == "*");
 
-        data = get_at(postfix, 6);
+        data = get_char_at(postfix, 6);
         REQUIRE(string(data) == "/");
 
-        data = get_at(postfix, 7);
+        data = get_char_at(postfix, 7);
         REQUIRE(string(data) == "0.2");
     }
 
     // SECTION("to_postfix 4") {
-    //     char expression[] = "3^3^(5*4.1)^0.2";
-    //
-    //     list = expression_to_list(expression);
+    // char expression[] = "3 ^ 3 ^ ( 5 * 4.1 ) ^ 0.2";
+    //     list = create_char_list_from(expression);
     //     postfix = to_postfix(list);
-    //     // print(postfix);
-    //
-    //     data = get_at(postfix, 0);
+    
+    //     data = get_char_at(postfix, 0);
     //     REQUIRE(string(data) == "3");
-    //
-    //     data = get_at(postfix, 1);
+    
+    //     data = get_char_at(postfix, 1);
     //     REQUIRE(string(data) == "3");
-    //
-    //     data = get_at(postfix, 2);
+    
+    //     data = get_char_at(postfix, 2);
     //     REQUIRE(string(data) == "5");
-    //
-    //     data = get_at(postfix, 3);
+    
+    //     data = get_char_at(postfix, 3);
     //     REQUIRE(string(data) == "4.1");
-    //
-    //     data = get_at(postfix, 4);
+    
+    //     data = get_char_at(postfix, 4);
     //     REQUIRE(string(data) == "*");
-    //
+    
     //     // 3 3 5 4.1 * 0.2 ^ ^ ^
     // }
-    //
+
     // SECTION("to_postfix 5") {
-    //     char expression[] = "3^3^5*4.1^0.2";
-    //
-    //     list = expression_to_list(expression);
+    // char expression[] = "3 ^ 3 ^ 5 * 4.1 ^ 0.2";
+    //     list = create_char_list_from(expression);
     //     postfix = to_postfix(list);
     //     print(postfix);
-    //
-    //     data = get_at(postfix, 0);
+    
+    //     data = get_char_at(postfix, 0);
     //     REQUIRE(string(data) == "3");
-    //
-    //     data = get_at(postfix, 1);
+    
+    //     data = get_char_at(postfix, 1);
     //     REQUIRE(string(data) == "3");
-    //
-    //     data = get_at(postfix, 2);
+    
+    //     data = get_char_at(postfix, 2);
     //     REQUIRE(string(data) == "5");
-    //
-    //     data = get_at(postfix, 3);
+    
+    //     data = get_char_at(postfix, 3);
     //     REQUIRE(string(data) == "^");
-    //
-    //     data = get_at(postfix, 4);
+    
+    //     data = get_char_at(postfix, 4);
     //     REQUIRE(string(data) == "^");
-    //
+    
     //     // 3 3 5 ^ ^ 4.1 0.2 ^ *
     // }
 

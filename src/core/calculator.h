@@ -3,9 +3,9 @@
 
 #include <stdio.h>
 #include <string.h>
-#include "../../lib/list/list.h"
+#include "list.h"
 #include "scanner.h"
-#include "util.h"
+#include "sanitization.h"
 #include "operations.h"
 
 

@@ -17,4 +17,12 @@
       },
     }
   ],
+  "files.associations": {
+    ".sequelizerc": "javascript",
+    ".prettierrc": "json",
+    "*.asm": "asm-intel-x86-generic",
+    "list.h": "c",
+    "util.h": "c",
+    "sanitization.h": "c"
+  },
 }
