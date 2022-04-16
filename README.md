@@ -53,7 +53,7 @@ Para executar:
 
 ## Documentação
 
-Para saber mais sobre a calculadora, cheque a [documentação](./docs/README.md).
+Para saber mais sobre essa calculadora, cheque a [documentação](./docs/README.md).
 
 ## Extensões úteis para VSCode
 

@@ -1,13 +1,18 @@
 # Testes Unitários
 Os testes foram escritos com o framework [Catch2](https://github.com/catchorg/Catch2)
 
-## Guia Rápido
-### Rodar o testes
+## Rodar todos os testes
+
 ```
-$ ./nome_do_teste
+./test
 ```
 
-### Tags
+## Selecionar teste específico
+
+```sh
+./test [tag]
+# ou
+./test <nome-do-caso-de-teste>
 ```
-$ ./nome_do_teste [tag]
-```
+
+Para mais informações, olhe [aqui](https://github.com/catchorg/Catch2/blob/devel/docs/command-line.md#specifying-which-tests-to-run).
