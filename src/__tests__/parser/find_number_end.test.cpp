@@ -9,7 +9,7 @@ using namespace std;
 #define _TEST_PARSER
 extern "C" {
 #endif
-    #include "../../core/parser.h"
+    #include "../../core/scanner.h"
 #ifdef _TEST_PARSER
 }
 #endif

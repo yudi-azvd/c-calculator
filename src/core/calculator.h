@@ -4,7 +4,7 @@
 #include <stdio.h>
 #include <string.h>
 #include "../../lib/list/list.h"
-#include "parser.h"
+#include "scanner.h"
 #include "util.h"
 #include "operations.h"
 

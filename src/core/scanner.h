@@ -1,5 +1,5 @@
-#ifndef PARSER_H_INCLUDED
-#define PARSER_H_INCLUDED
+#ifndef SCANNER_H_INCLUDED
+#define SCANNER_H_INCLUDED
 
 #include <stdio.h>
 #include "../../lib/list/list.h"
@@ -14,7 +14,6 @@ int copy_to(char dest[], char src[], int start, int end);
 
 int find_number_end(char str[], int start);
 
-/* mudar para tokenize() */
 t_list* tokenize(char expression[]);
 
 #endif
