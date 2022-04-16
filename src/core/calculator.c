@@ -136,17 +136,6 @@ t_list* to_postfix(t_list* expression) {
 }
 
 
-void sanitize(char expression[]) {
-    remove_whitespace(expression);
-    remove_illegalchars(expression);
-    /*
-    remove double points
-    remove double operations?
-    remove illegal chars
-    */
-}
-
-
 int is_valid(char expression[]) {
     /*
     int expr_lentgh = strlen(expression);

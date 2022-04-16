@@ -18,8 +18,6 @@
 /* talvez seja melhor retornar um char** */
 void calculate(char expression[], char** result);
 
-void sanitize(char expression[]);
-
 void evaluate(t_list* list, char** result);
 
 t_list* to_postfix(t_list* list);

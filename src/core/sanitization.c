@@ -31,3 +31,13 @@ void remove_illegalchars(char str[]) {
 
     free(noillegal_chars);
 }
+
+void sanitize(char expression[]) {
+    remove_whitespace(expression);
+    remove_illegalchars(expression);
+    /*
+    remove double points
+    remove double operations?
+    remove illegal chars
+    */
+}

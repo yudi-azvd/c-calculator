@@ -23,6 +23,7 @@
     "*.asm": "asm-intel-x86-generic",
     "list.h": "c",
     "util.h": "c",
-    "sanitization.h": "c"
+    "sanitization.h": "c",
+    "calculator.h": "c"
   },
 }

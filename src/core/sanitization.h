@@ -3,6 +3,8 @@
 
 #include "list.h"
 
+void sanitize(char expression[]);
+
 void remove_whitespace(char str[]);
 
 void remove_illegalchars(char str[]);

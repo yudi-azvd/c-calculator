@@ -1,5 +1,5 @@
 # Testes Unitários
-Os testes foram escritos com o framework [Catch2](https://github.com/catchorg/Catch2)
+Os testes foram escritos com o framework [Catch2](https://github.com/catchorg/Catch2).
 
 ## Rodar todos os testes
 

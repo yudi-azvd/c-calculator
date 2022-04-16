@@ -4,15 +4,15 @@ using std::string;
 
 // Esse pedaço é só pra incluir uma biblioteca
 // que deve ser tratada como código C.
-#ifndef _TEST_CALCULATOR
-#define _TEST_CALCULATOR
+#ifndef _TEST_SANITIZATION
+#define _TEST_SANITIZATION
 extern "C" {
 #endif
 
 #include <string.h>
 #include "sanitization.h"
 
-#ifdef _TEST_CALCULATOR
+#ifdef _TEST_SANITIZATION
 }
 #endif
 
