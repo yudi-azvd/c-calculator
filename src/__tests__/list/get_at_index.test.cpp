@@ -9,48 +9,32 @@
 #define _TEST_LIST
 extern "C" {
 #endif
-    #include "../../../lib/list/list.h"
+    #include "list.h"
+    #include "list_util.h"
 #ifdef _TEST_LIST
 }
 #endif
 
+
 TEST_CASE("tests on get_at_index", "[get_at_index]") {
     t_list* list;
+    int* data = nullptr;
 
     SECTION("integers") {
-        // preenchendo a lista
-        int* data = (int*) calloc(1, sizeof(int));
         list = create_list("int");
 
-        *data = 0;
+        calloc_set_int(&data, 0);
         insert_tail(list, data);
 
-        data = (int*) calloc(1, sizeof(int));
-        *data = 1;
+        calloc_set_int(&data, 1);
         insert_tail(list, data);
 
-        data = (int*) calloc(1, sizeof(int));
-        *data = 9;
+        calloc_set_int(&data, 9);
         insert_head(list, data);
 
-        print(list);
-        // int head = *((int*) list->head->data);
-        // std::cout << "head: " << head << '\n';
-        // head = *((int*) get_head(list));
-        // std::cout << "head: " << head << '\n';
-
-        // REQUIRE(*((int*) get_at_index(list, 0)) == 9);
-        // REQUIRE(*((int*) get_at_index(list, 1)) == 0);
-        // REQUIRE(*((int*) get_at_index(list, 2)) == 2);
-
-        int a = *((int*) get_at_index(list, 0));
-        REQUIRE(a == 9);
-
-        a = *((int*) get_at_index(list, 1));
-        REQUIRE(a == 0);
-
-        a = *((int*) get_at_index(list, 2));
-        REQUIRE(a == 1);
+        REQUIRE(9 == get_int_at(list, 0));
+        REQUIRE(0 == get_int_at(list, 1));
+        REQUIRE(1 == get_int_at(list, 2));
     }
 
     clear(list);
