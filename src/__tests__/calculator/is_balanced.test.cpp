@@ -58,12 +58,11 @@ TEST_CASE("tests on is_balanced", "[is_balanced]") {
 
             getline(test_file, test_line);
             getline(answer_file, answer_line);
-
             snprintf(expression, EXPRESSION_LEN_MAX, "%s", test_line.c_str());
-
-            if (answer_line == "Success\n")
-                // Quase que eu começo a perder a cabeça por causa do barra n.
-                REQUIRE(is_balanced(expression) == 0);
+            // ou é Sucess ou é índice de onde está o erro.
+            // debugger watch: *expression@<quantidade de elementos>
+            if (answer_line == "Success")
+                REQUIRE(is_balanced(expression) == 1);
             else
                 REQUIRE(is_balanced(expression) == 0);
 

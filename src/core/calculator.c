@@ -178,7 +178,7 @@ int is_balanced(char expression[]) {
             push(brackets_stack, &expression[i]);
         if (is_bracket(expression[i]) > 0) {
             if (!is_empty(brackets_stack)) {
-                if (match(expression[i], *((char*) peek(brackets_stack))))
+                if (match(*((char*) peek(brackets_stack)), expression[i]))
                     remove_head(brackets_stack);
                 else {
                     soft_clear(brackets_stack);
