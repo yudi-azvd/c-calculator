@@ -1,6 +1,6 @@
 <!-- trash -->
 # 🔢 Calculadora em C
-Esse projeto é a revitalização de um [antigo trabalho](./docs/trabalho-calculadora.pdf)
+Esse projeto é a revitalização de um [antigo trabalho](./docs/trabalho-calculadora.md)
 de Estrutura de Dados para o qual era necessário implementar uma calculadora em 
 C ~~porque programador de verdade sabe programar em C~~. A calculadora executa 
 algumas operações básicas utilizando listas lincadas, pilhas e conversão entre 

@@ -17,6 +17,7 @@ mostrar resultado/erros
 
 ## Referências
 
+- [Unit 4: Scanning and Parsing](https://www.usna.edu/Users/cs/roche/courses/f18si413/notes/04/), USNA
 - [Infix, Prefix and Postfix Expressions](https://panda.ime.usp.br/panda/static/pythonds_pt/02-EDBasicos/InfixPrefixandPostfixExpressions.html)
 IME USP (?)
 - [Shunting yard algorithm](https://en.wikipedia.org/wiki/Shunting_yard_algorithm)
