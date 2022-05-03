@@ -17,10 +17,20 @@ t_list* create_char_list_from(char* str) {
 	return l;
 }
 
+char* get_char_at(t_list* l, int index) {
+	return (char*) get_at_index(l, index);
+}
+
+int get_int_at(t_list* l, int index) {
+	return *((int*) get_at_index(l, index));
+}
+
 void calloc_set_int(int** data, int value) {
 	*data = (int*) calloc(1, sizeof(int));
 	**data = value;
 }
+
+char char_list_str[200] = "";
 
 void char_list_to_str(t_list* l) {
 	char_list_str[0] = '\0';
@@ -28,9 +38,9 @@ void char_list_to_str(t_list* l) {
 	t_node* curr = l->head;
 	while (curr) {
 		int str_len = strlen((char*) curr->data);
-		strcat(char_list_str+offset, (char*) curr->data);
+		strcat(char_list_str + offset, (char*) curr->data);
 		offset += str_len;
-		strcat(char_list_str+offset, " ");
+		strcat(char_list_str + offset, " ");
 		curr = curr->next;
 	}
 	char_list_str[offset] = '\0';

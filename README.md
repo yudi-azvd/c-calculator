@@ -61,6 +61,8 @@ Para saber mais sobre essa calculadora, cheque a [documentação](./docs/README.
 - CMake
 - CMake Tools
 - C++ TestMate
+- Draw.io Integration (se você quiser visualizar o diagrama pelo Draw.io dentro
+do VSCode)
 
 
 ## A fazer

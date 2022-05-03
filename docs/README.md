@@ -15,6 +15,8 @@ calcular/avaliar: pode retornar erros?
 mostrar resultado/erros
 ```
 
+![Calculadora](./calculator.drawio.png)
+
 ## Referências
 
 - [Unit 4: Scanning and Parsing](https://www.usna.edu/Users/cs/roche/courses/f18si413/notes/04/), USNA

@@ -7,17 +7,15 @@ using std::endl;
 
 // Esse pedaço é só pra incluir uma biblioteca
 // que deve ser tratada como código C.
-#ifndef _TEST_CALCULATOR
-#define _TEST_CALCULATOR
+#ifndef _TEST_TO_POSTFIX
+#define _TEST_TO_POSTFIX
 extern "C" {
 #endif
-
-#include <stdio.h>
-#include <string.h>
-#include "calculator.h"
-#include "list_util.h"
-
-#ifdef _TEST_CALCULATOR
+    #include <stdio.h>
+    #include <string.h>
+    #include "calculator.h"
+    #include "list_util.h"
+#ifdef _TEST_TO_POSTFIX
 }
 #endif
 

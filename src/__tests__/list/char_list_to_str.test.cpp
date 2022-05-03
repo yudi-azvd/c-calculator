@@ -31,7 +31,6 @@ TEST_CASE("char_list_to_str", "[char_list_to_str]") {
 		char expression[] = "3 * 3";
 		list = create_char_list_from(expression);
 		char_list_to_str(list);
-		// depois que sai da função char_list_to_str, a str é zerada.
 		REQUIRE(string("3 * 3") == string(char_list_str));
 	}
 

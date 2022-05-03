@@ -22,12 +22,22 @@ avaliação de expressões aritméticas na forma posfixa.
 O projeto será desenvolvido em duplas, e é constituído de três partes:
 
 1. Relatório (com no mínimo 5 páginas), contendo:
-    1. Introdução: descrição do problema a ser resolvido e visão geral sobre o funcionamento do programa.
-    1. Implementação: descrição sobre a implementação do programa. Deve ser detalhada a estrutura de dados utilizada (de preferência com diagramas ilustrativos), o funcionamento das principais funções e procedimentos utilizados, o formato de entrada e saída de dados, bem como decisões tomadas relativas aos casos e detalhes de especificação que porventura estejam omissos no enunciado.
-    1. Estudo de Complexidade: estudo da complexidade do tempo de execução dos procedimentos implementados e do programa como um todo (notação O).
-    1. Listagem de testes executados: os testes executados devem ser simplesmente apresentados.
-    1. Conclusão: comentários gerais sobre o trabalho e as principais dificuldades encontradas em sua implementação.
-    1. Bibliografia: bibliografia utilizada para o desenvolvimento do trabalho, incluindo sites da Internet se for o caso.
+    1. Introdução: descrição do problema a ser resolvido e visão geral sobre o 
+    funcionamento do programa.
+    1. Implementação: descrição sobre a implementação do programa. Deve ser 
+    detalhada a estrutura de dados utilizada (de preferência com diagramas 
+    ilustrativos), o funcionamento das principais funções e procedimentos 
+    utilizados, o formato de entrada e saída de dados, bem como decisões tomadas
+    relativas aos casos e detalhes de especificação que porventura estejam omissos
+     no enunciado.
+    1. Estudo de Complexidade: estudo da complexidade do tempo de execução dos 
+    procedimentos implementados e do programa como um todo (notação O).
+    1. Listagem de testes executados: os testes executados devem ser simplesmente
+    apresentados.
+    1. Conclusão: comentários gerais sobre o trabalho e as principais dificuldades 
+    encontradas em sua implementação.
+    1. Bibliografia: bibliografia utilizada para o desenvolvimento do trabalho, 
+    incluindo sites da Internet se for o caso.
 1. Código fonte;
 1. Apresentação oral do projeto.
 
